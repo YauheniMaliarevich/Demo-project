@@ -20,7 +20,7 @@ public class SessionRequestContent {
 	}
 	
 	public void extractValues(HttpServletRequest request) {
-		requestAttr.put("Login", request.getParameter(LOGIN));
+		requestAttr.put("login", request.getParameter(LOGIN));
 		requestAttr.put("password", request.getParameter(PASSWORD));
 		
 	}
@@ -30,6 +30,14 @@ public class SessionRequestContent {
 		if(requestAttr.containsKey(key)) {
 			result = requestAttr.get(key);
 		}
+	}
+	
+	public String getParam(String param) {
+		String result = null;
+		if(requestAttr.containsKey(param)) {
+			result = requestAttr.get(param);
+		}
+		return result;
 	}
 
 }

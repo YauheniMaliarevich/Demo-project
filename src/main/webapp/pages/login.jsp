@@ -9,7 +9,7 @@
 <body>
 <form name="LoginForm" method="post" action="Controller">
 <input type = "hidden" name = "command" value = "login"/>
-Login:
+Login!:
 <br>
 <input type = "text" name = "login" value = ""/>
 <br>

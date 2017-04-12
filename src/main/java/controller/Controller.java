@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import controller.action.Action;
 import controller.action.ActionFactory;
+import controller.logic.SessionRequestContent;
 
 /**
  * Servlet implementation class Controller
@@ -27,6 +28,8 @@ public class Controller extends HttpServlet {
 
     public void service(HttpServletRequest request, HttpServletResponse responce) {
     	Action action = ActionFactory.getAction(request, responce);
+    	SessionRequestContent content = new SessionRequestContent(request);
+    	action.execute(content);
     	
     }
 	/**

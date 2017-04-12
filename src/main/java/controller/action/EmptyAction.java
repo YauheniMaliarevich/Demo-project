@@ -1,9 +1,10 @@
 package controller.action;
 
-public class EmptyAction implements Action{
+import controller.logic.SessionRequestContent;
 
+public class EmptyAction implements Action{
 	@Override
-	public void execute() {
+	public void execute(SessionRequestContent content) {
 		// TODO Auto-generated method stub
 		
 	}

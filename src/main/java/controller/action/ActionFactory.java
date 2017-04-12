@@ -10,12 +10,13 @@ public class ActionFactory {
 		Action currentAction = new EmptyAction();
 		String action = request.getParameter("command");
 		
-		if(action == null || action.isEmpty()) {
-			
-		} else {
-			ActionEnum currentEnum = ActionEnum.valueOf(action);
-			currentAction = currentEnum.getAction();
-		}
+//		if(action == null || action.isEmpty()) {
+//			
+//		} else {
+//			ActionEnum currentEnum = ActionEnum.valueOf(action);
+//			currentAction = currentEnum.getAction();
+//		}
+		currentAction = new LoginAction();
 		return currentAction;
 	}
 
