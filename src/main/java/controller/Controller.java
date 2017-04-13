@@ -31,7 +31,9 @@ public class Controller extends HttpServlet {
     public void service(HttpServletRequest request, HttpServletResponse responce) {
     	Action action = ActionFactory.getAction(request, responce);
     	SessionRequestContent content = new SessionRequestContent(request);
+    	content.extractValues(request);
     	String page = action.execute(content);
+    	System.out.println(page);
     	RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
     	try {
 			dispatcher.forward(request, responce);

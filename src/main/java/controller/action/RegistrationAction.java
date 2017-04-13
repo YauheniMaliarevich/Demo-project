@@ -8,6 +8,7 @@ public class RegistrationAction implements Action{
 
 	private static final String LOGIN = "login";
 	private static final String PASSWORD = "password";
+	private static final String PATH = "/pages/home.jsp";
 	@Override
 	public String execute(SessionRequestContent content) {
 		String login = content.getParam(LOGIN);
@@ -15,7 +16,7 @@ public class RegistrationAction implements Action{
 		ServiceFactory serviceFactory = ServiceFactory.getInstance();
 		UserService userService = serviceFactory.getUserService();
 		userService.registration(login, password);
-		return "";
+		return PATH;
 		
 	}
 

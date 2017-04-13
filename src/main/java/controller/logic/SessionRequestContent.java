@@ -20,6 +20,8 @@ public class SessionRequestContent {
 	}
 	
 	public void extractValues(HttpServletRequest request) {
+		 System.out.println(request.getParameter(LOGIN));
+		 System.out.println(request.getParameter(PASSWORD));
 		requestAttr.put("login", request.getParameter(LOGIN));
 		requestAttr.put("password", request.getParameter(PASSWORD));
 		
