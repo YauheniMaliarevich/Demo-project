@@ -10,7 +10,7 @@ public class SqlUserDAO implements UserDAO {
 	public void signin(String name, String password) {
 		Connection con = null;
 		try {
-			Class.forName("");
+			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://3306/db","root","root");
 			System.out.println("connection");
 		} catch(ClassNotFoundException e) {
