@@ -18,20 +18,11 @@ public class SqlUserDAO implements UserDAO {
 		Connection connection = null;
 		Statement statement = null;
 		try {
-			 String createTableSQL = "CREATE TABLE DBUSER("
-			            + "USER_ID NUMBER(5) NOT NULL, "
-			            + "USERNAME VARCHAR(20) NOT NULL, "
-			            + "CREATED_BY VARCHAR(20) NOT NULL, "
-			            + "CREATED_DATE DATE NOT NULL, " + "PRIMARY KEY (USER_ID) "
-			            + ")";
 			 
-			String insertIntoSQL = "INSERT INTO users (user_name, user_password) values ('" + name + "','" + password +"')" ;
-			System.out.println(insertIntoSQL);
+			String insertIntoSQL = "INSERT INTO users (user_login, user_password) values ('" + name + "','" + password +"')" ;
 			connection = getDBConnection();
 			statement = connection.createStatement();
-			System.out.println(1111);
-			statement.execute(createTableSQL);
-			System.out.println("it works");
+			statement.execute(insertIntoSQL);
 		 } catch (SQLException e) {
 		        System.out.println("SQL exeption");
 		    } finally {
