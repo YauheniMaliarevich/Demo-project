@@ -9,6 +9,7 @@ public class RegistrationAction implements Action{
 	private static final String LOGIN = "login";
 	private static final String PASSWORD = "password";
 	private static final String PATH = "/pages/home.jsp";
+	private static final String ERROR_MESSAGE = "";
 	@Override
 	public String execute(SessionRequestContent content) {
 		String login = content.getParam(LOGIN);

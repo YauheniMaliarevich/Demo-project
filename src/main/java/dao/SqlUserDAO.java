@@ -23,6 +23,7 @@ public class SqlUserDAO implements UserDAO {
 			connection = getDBConnection();
 			statement = connection.createStatement();
 			statement.execute(insertIntoSQL);
+			
 		 } catch (SQLException e) {
 		        System.out.println("SQL exeption");
 		    } finally {
