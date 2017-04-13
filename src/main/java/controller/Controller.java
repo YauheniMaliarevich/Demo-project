@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,7 +31,17 @@ public class Controller extends HttpServlet {
     public void service(HttpServletRequest request, HttpServletResponse responce) {
     	Action action = ActionFactory.getAction(request, responce);
     	SessionRequestContent content = new SessionRequestContent(request);
-    	action.execute(content);
+    	String page = action.execute(content);
+    	RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
+    	try {
+			dispatcher.forward(request, responce);
+		} catch (ServletException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     	
     }
 	/**

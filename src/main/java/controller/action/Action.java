@@ -3,6 +3,6 @@ package controller.action;
 import controller.logic.SessionRequestContent;
 
 public interface Action {
-	void execute(SessionRequestContent content);
+	String execute(SessionRequestContent content);
 
 }

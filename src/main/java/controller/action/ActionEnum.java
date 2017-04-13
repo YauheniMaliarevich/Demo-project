@@ -10,6 +10,16 @@ public enum ActionEnum {
 		{
 		this.action = new LoginAction();
 		}
+	},
+	GOTOREGISTRATIONPAGE {
+		{
+			this.action = new ForwardToRegistationPageAction();
+		}
+	},
+	GOTOLOGINPAGE {
+		{
+		this.action = new ForwardToLoginPageAction();
+		}
 	};
 	Action action;
 	public Action getAction() {

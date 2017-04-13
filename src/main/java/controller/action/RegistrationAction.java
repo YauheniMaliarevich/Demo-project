@@ -9,12 +9,13 @@ public class RegistrationAction implements Action{
 	private static final String LOGIN = "login";
 	private static final String PASSWORD = "password";
 	@Override
-	public void execute(SessionRequestContent content) {
+	public String execute(SessionRequestContent content) {
 		String login = content.getParam(LOGIN);
 		String password = content.getParam(PASSWORD);
 		ServiceFactory serviceFactory = ServiceFactory.getInstance();
 		UserService userService = serviceFactory.getUserService();
 		userService.registration(login, password);
+		return "";
 		
 	}
 

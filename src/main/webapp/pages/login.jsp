@@ -7,19 +7,20 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h1>Login page</h1>
 <form name="LoginForm" method="post" action="Controller">
 <input type = "hidden" name = "command" value = "login"/>
-Login!:
+Login:
 <br>
 <input type = "text" name = "login" value = ""/>
 <br>
 Password:
-<br>"
+<br>
 <input type = "password" name = "password" value = ""/>
 <br>
 <input type = "submit" value = "Log in"/> 
 <br>
-<a href = "pages/registration.jsp">Registration!!!!</a>
+<a href = "Controller?command=GoToRegistrationPage">Registration!!!!</a>
 <br>
 ${errorLoginAndPassword}
 ${wrongAction}
