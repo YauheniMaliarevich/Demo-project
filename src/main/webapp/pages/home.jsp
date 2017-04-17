@@ -27,7 +27,7 @@ Enter you comment:
 <br>
 ${errorMessage}
 <br>
-<a href = "Controller?command=GoToRegistrationPage">Go to registration page</a>
+<a href = "Controller?command=Logout">Logout</a>
 <br>
 </form> 
 </body>

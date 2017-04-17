@@ -33,16 +33,12 @@ public class Controller extends HttpServlet {
     	SessionRequestContent content = new SessionRequestContent(request);
     	content.extractValues(request);
     	String page = action.execute(content);
-    	//request.setAttribute("userName", content.getResponceAttr("userName"));
-    	//request.setAttribute("errorMessage", content.getResponceAttr("errorMessage"));
     	RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
     	try {
 			dispatcher.forward(request, responce);
 		} catch (ServletException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     	

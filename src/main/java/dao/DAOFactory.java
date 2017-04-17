@@ -11,8 +11,5 @@ public class DAOFactory {
 	public UserDAO getUserDao() {
 		return userDao;
 	}
-	
-	
-	
 
 }

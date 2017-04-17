@@ -58,5 +58,8 @@ public class SessionRequestContent {
 		request.setAttribute(key, value);
 	}
 	
+	public void killSession() {
+		request.getSession().invalidate();
+	}
 
 }

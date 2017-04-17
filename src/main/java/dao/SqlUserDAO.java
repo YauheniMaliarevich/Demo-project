@@ -72,13 +72,11 @@ public class SqlUserDAO implements UserDAO {
 		Date date = new Date();
 		String insertIntoTable = "INSERT INTO comments (comment_author, comment_date, comment_text) values ('" + name + "','" + date.toString() 
 		+"','" + text + "')";
-		System.out.println(insertIntoTable);
 		
 		try {
 			connection = getDBConnection();
 			statement = connection.createStatement();
 			isComment = statement.execute(insertIntoTable);
-			System.out.println(isComment);
 			
 		} catch(SQLException e) {
 			Log.error("Sql exeption", e);
@@ -96,14 +94,14 @@ public class SqlUserDAO implements UserDAO {
 	@Override
 	public String getText() {
 		StringBuilder result = new StringBuilder();
-		String query = "select comment-author, comment_date, comment_text from comments";
-		
+		String query = "select comment_author, comment_date, comment_text from comments";
 		try {
 			connection = getDBConnection();
 			statement = connection.createStatement();
 			ResultSet rs = statement.executeQuery(query);
 			while(rs.next()) {
-				result.append(rs.getString("comment_author ") + " at " + rs.getString("comment_date") + " say:" + rs.getString("comments_text\r\n"));
+				
+				result.append(rs.getString("comment_author") + " at " + rs.getString("comment_date") + " say:" + rs.getString("comment_text") + "\r\n");
 			}
 		} catch(SQLException e) {
 			Log.error("Sql exeption", e);

@@ -25,6 +25,11 @@ public enum ActionEnum {
 		{
 			this.action = new CommentAction();
 		}
+	},
+	LOGOUT {
+		{
+			this.action = new LogoutAction();
+		}
 	};
 	
 	Action action;
