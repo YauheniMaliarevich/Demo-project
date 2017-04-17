@@ -16,7 +16,6 @@ public class CommentAction implements Action{
 		String page = null;
 		String text = content.getParam(MESSAGE);
 		String login = content.getParam(LOGIN);
-		System.out.println("!!!!" + text);
 		ServiceFactory serviceFactory = ServiceFactory.getInstance();
 		UserService userService = serviceFactory.getUserService();
 		if(userService.comment(login, text)) {
