@@ -14,7 +14,9 @@ public class SessionRequestContent {
 	private Map<String, String[]> requestParam;
 	private Map<String, Object> sessionAttributes;
 	
+	HttpServletRequest request;
 	public SessionRequestContent(HttpServletRequest request) {
+		this.request = request;
 		requestAttr = new HashMap<String, String>();
 		
 	}
@@ -41,5 +43,19 @@ public class SessionRequestContent {
 		}
 		return result;
 	}
+	public void addResponceAttr(String key, String value) {
+		responceAttr.put(key, value);
+	}
+	public String getResponceAttr(String key) {
+		if(responceAttr.containsKey(key)) {
+			return responceAttr.get(key);
+		}else {
+			return null;
+		}
+	}
+	public void setParam(String key, String value) {
+		request.setAttribute(key, value);
+	}
+	
 
 }
