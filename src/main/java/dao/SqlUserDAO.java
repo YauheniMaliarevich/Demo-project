@@ -21,7 +21,6 @@ public class SqlUserDAO implements UserDAO {
 			String checkUser = "select user_id from users where user_login = '" + name + "' and user_password = "+ "'" + password + "'";
 			connection = getDBConnection();
 			statement = connection.createStatement();
-			//isLogin = statement.execute(checkUser);
 			ResultSet rs = statement.executeQuery(checkUser);
 			while(rs.next()) {
 				String userId = rs.getString("user_id");
@@ -40,7 +39,7 @@ public class SqlUserDAO implements UserDAO {
 			}
 		}
 		return isLogin;
-		}
+	}
 
 	@Override
 	public boolean reagistration(String name, String password) {
@@ -54,14 +53,14 @@ public class SqlUserDAO implements UserDAO {
 			isRegister = statement.execute(checkInsertingIntoSql);
 			
 		 } catch (SQLException e) {
-			 Log.error("could not execute Sql query", e);
-		    } finally {		        
-		            try {
-						statement.close();
-						connection.close();
-					} catch (SQLException e) {
-						Log.error("Problem with closing connection or statement", e);
-					}
+		 Log.error("could not execute Sql query", e);
+		 } finally {
+			 try{
+				 statement.close();
+				 connection.close();
+			 	}catch (SQLException e) {
+			 		Log.error("Problem with closing connection or statement", e);
+				}
 		    }
 		return isRegister;
 	}
@@ -72,12 +71,10 @@ public class SqlUserDAO implements UserDAO {
 		Date date = new Date();
 		String insertIntoTable = "INSERT INTO comments (comment_author, comment_date, comment_text) values ('" + name + "','" + date.toString() 
 		+"','" + text + "')";
-		
 		try {
 			connection = getDBConnection();
 			statement = connection.createStatement();
 			isComment = statement.execute(insertIntoTable);
-			
 		} catch(SQLException e) {
 			Log.error("Sql exeption", e);
 		} finally {
@@ -100,7 +97,6 @@ public class SqlUserDAO implements UserDAO {
 			statement = connection.createStatement();
 			ResultSet rs = statement.executeQuery(query);
 			while(rs.next()) {
-				
 				result.append(rs.getString("comment_author") + " at " + rs.getString("comment_date") + " say:" + rs.getString("comment_text") + "\r\n");
 			}
 		} catch(SQLException e) {
@@ -131,7 +127,5 @@ public class SqlUserDAO implements UserDAO {
 	    }
 	    return dbConnection;
 	}
-		
-	}
-
+}
 

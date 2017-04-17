@@ -10,13 +10,13 @@
 <h1>Login page</h1>
 <form name="LoginForm" method="post" action="Controller">
 <input type = "hidden" name = "command" value = "login"/>
-Login:
+<label for="login">Login:</label>
 <br>
-<input type = "text" name = "login" value = ""/>
+<input type ="text" autofocus id="login" name = "login" value = ""/>
 <br>
-Password:
+<label for="password">Password:</label>
 <br>
-<input type = "password" name = "password" value = ""/>
+<input type = "password" id = "password" name = "password" value = ""/>
 <br>
 <input type = "submit" value = "Log in"/> 
 <br>
