@@ -26,5 +26,19 @@ public class UserServiceImp implements UserService{
 		return userDao.reagistration(login, password);
 		
 	}
+	
+	@Override
+	public boolean comment(String name, String text) {
+		DAOFactory daoObjectfactory = DAOFactory.getInstance();
+		UserDAO userDao = daoObjectfactory.getUserDao();
+		return userDao.comment(name, text);
+	}
+	
+	@Override
+	public String getText() {
+		DAOFactory daoObjectfactory = DAOFactory.getInstance();
+		UserDAO userDao = daoObjectfactory.getUserDao();
+		return userDao.getText();
+	}
 
 }

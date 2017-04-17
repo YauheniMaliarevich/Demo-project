@@ -12,6 +12,23 @@ alert('hello');
 </script>
 Hello ${userName}
 <br>
+<form name="addComment" method="post" action="Controller">
+<input type="hidden" name="command" value = "addComment"/>
+<input type="hidden" name="login" value = ${userName} value=""/>
+<textarea id="area" name="textarea" placeholder="write your comment" cols="30" rows="7">
+${text}
+</textarea>
+<br>
+Enter you comment:
+<br>
+<input type ="text" name="message"/>
+<br>
+<input type = "submit" value="comment"/>
+<br>
+${errorMessage}
+<br>
 <a href = "Controller?command=GoToRegistrationPage">Go to registration page</a>
+<br>
+</form> 
 </body>
 </html>

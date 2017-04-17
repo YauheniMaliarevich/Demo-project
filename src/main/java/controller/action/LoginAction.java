@@ -21,6 +21,7 @@ public class LoginAction implements Action{
 		if(userService.login(login, password)) {
 			page = HOMEPAGE;
 			content.setParam("userName", login);
+			content.setParam("text", userService.getText());
 		} else {
 			page = ERRORPAGE;
 			content.setParam("errorMessage", "you do not register");

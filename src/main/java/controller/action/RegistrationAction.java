@@ -22,6 +22,7 @@ public class RegistrationAction implements Action{
 		if(userService.registration(login, password)) {
 			path = HOMEPAGE;
 			content.setParam("userName", login);
+			content.setParam("text", userService.getText());
 			
 		} else {
 			path = ERRORPAGE;

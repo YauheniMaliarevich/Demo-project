@@ -20,7 +20,13 @@ public enum ActionEnum {
 		{
 		this.action = new ForwardToLoginPageAction();
 		}
+	},
+	ADDCOMMENT {
+		{
+			this.action = new CommentAction();
+		}
 	};
+	
 	Action action;
 	public Action getAction() {
 		return action;

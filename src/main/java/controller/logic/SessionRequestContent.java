@@ -8,6 +8,7 @@ public class SessionRequestContent {
 	
 	private static final String LOGIN = "login";
 	private static final String PASSWORD = "password";
+	private static final String MESSAGE = "message";
 	
 	private Map<String, String> requestAttr;
 	private Map<String, String> responceAttr;
@@ -22,10 +23,10 @@ public class SessionRequestContent {
 	}
 	
 	public void extractValues(HttpServletRequest request) {
-		 System.out.println(request.getParameter(LOGIN));
-		 System.out.println(request.getParameter(PASSWORD));
 		requestAttr.put("login", request.getParameter(LOGIN));
 		requestAttr.put("password", request.getParameter(PASSWORD));
+		requestAttr.put("message", request.getParameter(MESSAGE));
+		
 		
 	}
 	
